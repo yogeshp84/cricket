@@ -19,7 +19,7 @@ class playersList extends Component{
         this.setState({
             'playersList':updatedPlayer
         });
-        console.log(this.state.playersList);
+        //console.log(this.state.playersList);
         
     }
     
@@ -34,7 +34,7 @@ class playersList extends Component{
     async componentDidMount(){
         try{
             const list = await this.loadList();
-            console.log(list);
+            //console.log(list);
             this.setState({
                 'playersList':list.data
             });
@@ -56,7 +56,7 @@ class playersList extends Component{
        let playerRow = this.state.playersList.map((el, i) => (
             <tr key={i}>
                  <td>{i+1}</td>
-                 <td><img src={'http://localhost:8000/assets/images/teams/'+el.image}/></td>
+                 <td><img height="100" width="100" src={'http://127.0.0.1:8000/storage/players/'+el.image}/></td>
                  <td>{el.lastName+' '+el.firstName}</td>
                  <td>
                    <Link to={'/player/edit/'+el.id}>Edit</Link>
@@ -73,17 +73,21 @@ class playersList extends Component{
             <div class="col-md-12 m-top-100"><h1>Teams Name</h1></div>
           </div><br />
         <table className="table table-bordered   m-btm-100">
+        <thead>
           <tr>
             <th>Sr.</th>
             <th>Image</th>
             <th>Name</th>
             <th colspan="2">Action</th>
           </tr>
+          </thead>
+          <tbody>
           {playerRow}
           <tr>
             <td colSpan="4"></td>
             <td><Link to ="/player/add"><button className="btn btn-primary">Add Player</button></Link></td>
           </tr>
+          </tbody>
         </table>
         </React.Fragment>
    );

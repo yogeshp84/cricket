@@ -1,4 +1,5 @@
 import React, {Component} from 'react' ;
+import { Redirect } from 'react-router-dom' ;
 import API from './api';
 
  class teamAdd extends Component{
@@ -29,6 +30,7 @@ import API from './api';
                 'isSuccess':true
                 
           });
+          this.props.history.push("/");
         }catch (error) {
             this.setState({
                 'isError':true,

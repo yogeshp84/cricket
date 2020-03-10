@@ -70453,12 +70453,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./resources/js/components/header.js");
 /* harmony import */ var _teamList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./teamList */ "./resources/js/components/teamList.js");
-/* harmony import */ var _playersList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./playersList */ "./resources/js/components/playersList.js");
-/* harmony import */ var _playerAdd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./playerAdd */ "./resources/js/components/playerAdd.js");
-/* harmony import */ var _playerEdit__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./playerEdit */ "./resources/js/components/playerEdit.js");
-/* harmony import */ var _points__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./points */ "./resources/js/components/points.js");
-/* harmony import */ var _teamAdd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./teamAdd */ "./resources/js/components/teamAdd.js");
-/* harmony import */ var _teamEdit__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./teamEdit */ "./resources/js/components/teamEdit.js");
+/* harmony import */ var _matchList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./matchList */ "./resources/js/components/matchList.js");
+/* harmony import */ var _playersList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./playersList */ "./resources/js/components/playersList.js");
+/* harmony import */ var _playerAdd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./playerAdd */ "./resources/js/components/playerAdd.js");
+/* harmony import */ var _playerEdit__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./playerEdit */ "./resources/js/components/playerEdit.js");
+/* harmony import */ var _points__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./points */ "./resources/js/components/points.js");
+/* harmony import */ var _teamAdd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./teamAdd */ "./resources/js/components/teamAdd.js");
+/* harmony import */ var _teamEdit__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./teamEdit */ "./resources/js/components/teamEdit.js");
+
 
 
 
@@ -70483,27 +70485,27 @@ function App() {
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/players/:id",
-    component: _playersList__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _playersList__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/player/edit/:id",
-    component: _playerEdit__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _playerEdit__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/player/add",
-    component: _playerAdd__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    exact: true,
-    path: "/points-table",
-    component: _points__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _playerAdd__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/team/edit/:id",
-    component: _teamEdit__WEBPACK_IMPORTED_MODULE_9__["default"]
+    component: _teamEdit__WEBPACK_IMPORTED_MODULE_10__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/team/add",
-    component: _teamAdd__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _teamAdd__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    exact: true,
+    path: "/matches",
+    component: _matchList__WEBPACK_IMPORTED_MODULE_4__["default"]
   }))));
 }
 
@@ -70558,16 +70560,169 @@ var primaryHeader = function primaryHeader() {
     className: "nav-item"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     className: "nav-link",
-    to: "/players/10"
-  }, "Players")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "nav-item"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    className: "nav-link",
-    to: "/points-table"
+    to: "/matches"
   }, "Points Table")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (primaryHeader);
+
+/***/ }),
+
+/***/ "./resources/js/components/matchList.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/matchList.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./api */ "./resources/js/components/api.js");
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var matchList = /*#__PURE__*/function (_Component) {
+  _inherits(matchList, _Component);
+
+  function matchList() {
+    var _this;
+
+    _classCallCheck(this, matchList);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(matchList).call(this));
+    _this.state = {
+      matchList: []
+    };
+    return _this;
+  }
+
+  _createClass(matchList, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var match;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return this.loadList();
+
+              case 3:
+                match = _context.sent;
+                this.setState({
+                  'matchList': match.data.data
+                });
+                _context.next = 10;
+                break;
+
+              case 7:
+                _context.prev = 7;
+                _context.t0 = _context["catch"](0);
+                console.log(_context.t0.response);
+
+              case 10:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[0, 7]]);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
+    key: "loadList",
+    value: function () {
+      var _loadList = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                return _context2.abrupt("return", _api__WEBPACK_IMPORTED_MODULE_3__["default"].get('/matches/', {
+                  headers: {
+                    'content-type': 'multipart/form-data',
+                    'X-CSRF-TOKEN': csrf_token
+                  }
+                }));
+
+              case 1:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      function loadList() {
+        return _loadList.apply(this, arguments);
+      }
+
+      return loadList;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      var matchRow = '';
+
+      if (Array.isArray(this.state.matchList) && this.state.matchList.length > 0) {
+        matchRow = this.state.matchList.map(function (el, i) {
+          return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+            key: i
+          }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, i + 1), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, el.teamFirst), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, el.teamTwo), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, el.teamWinner), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, el.matchPoints));
+        });
+      }
+
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        "class": "row "
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+        "class": "col-md-12 m-top-100"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Teams Name"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+        className: "table table-bordered   m-btm-100"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "S.N"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Team 1"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Team 2"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Winner"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Points"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, matchRow)));
+    }
+  }]);
+
+  return matchList;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (matchList);
 
 /***/ }),
 
@@ -70676,11 +70831,12 @@ var playerAdd = /*#__PURE__*/function (_Component) {
                   'isError': false,
                   'isSuccess': true
                 });
-                _context.next = 12;
+                this.props.history.push("/players/" + this.state.team_id);
+                _context.next = 13;
                 break;
 
-              case 9:
-                _context.prev = 9;
+              case 10:
+                _context.prev = 10;
                 _context.t0 = _context["catch"](1);
                 this.setState({
                   'isError': true,
@@ -70688,12 +70844,12 @@ var playerAdd = /*#__PURE__*/function (_Component) {
                   'isSuccess': false
                 });
 
-              case 12:
+              case 13:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[1, 9]]);
+        }, _callee, this, [[1, 10]]);
       }));
 
       function onSubmiHandler(_x) {
@@ -71217,11 +71373,12 @@ var playerAdd = /*#__PURE__*/function (_Component) {
                   'isError': false,
                   'isSuccess': true
                 });
-                _context3.next = 12;
+                this.props.history.push("/players/" + this.state.team_id);
+                _context3.next = 13;
                 break;
 
-              case 9:
-                _context3.prev = 9;
+              case 10:
+                _context3.prev = 10;
                 _context3.t0 = _context3["catch"](1);
                 this.setState({
                   'isError': true,
@@ -71229,12 +71386,12 @@ var playerAdd = /*#__PURE__*/function (_Component) {
                   'isSuccess': false
                 });
 
-              case 12:
+              case 13:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3, this, [[1, 9]]);
+        }, _callee3, this, [[1, 10]]);
       }));
 
       function onSubmiHandler(_x) {
@@ -71588,10 +71745,9 @@ var playersList = /*#__PURE__*/function (_Component) {
               case 4:
                 this.setState({
                   'playersList': updatedPlayer
-                });
-                console.log(this.state.playersList);
+                }); //console.log(this.state.playersList);
 
-              case 6:
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -71649,24 +71805,24 @@ var playersList = /*#__PURE__*/function (_Component) {
 
               case 3:
                 list = _context3.sent;
-                console.log(list);
+                //console.log(list);
                 this.setState({
                   'playersList': list.data
                 });
-                _context3.next = 11;
+                _context3.next = 10;
                 break;
 
-              case 8:
-                _context3.prev = 8;
+              case 7:
+                _context3.prev = 7;
                 _context3.t0 = _context3["catch"](0);
                 console.log(_context3.t0.response);
 
-              case 11:
+              case 10:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3, this, [[0, 8]]);
+        }, _callee3, this, [[0, 7]]);
       }));
 
       function componentDidMount() {
@@ -71715,7 +71871,9 @@ var playersList = /*#__PURE__*/function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
           key: i
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, i + 1), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-          src: 'http://localhost:8000/assets/images/teams/' + el.image
+          height: "100",
+          width: "100",
+          src: 'http://127.0.0.1:8000/storage/players/' + el.image
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, el.lastName + ' ' + el.firstName), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: '/player/edit/' + el.id
         }, "Edit")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -71730,15 +71888,15 @@ var playersList = /*#__PURE__*/function (_Component) {
         "class": "col-md-12 m-top-100"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Teams Name"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
         className: "table table-bordered   m-btm-100"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Sr."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Image"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Name"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Sr."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Image"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Name"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
         colspan: "2"
-      }, "Action")), playerRow, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      }, "Action"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, playerRow, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
         colSpan: "4"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/player/add"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Add Player"))))));
+      }, "Add Player")))))));
     }
   }]);
 
@@ -71792,7 +71950,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./api */ "./resources/js/components/api.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./api */ "./resources/js/components/api.js");
 
 
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -71816,6 +71975,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -71867,11 +72027,12 @@ var teamAdd = /*#__PURE__*/function (_Component) {
                   'isError': false,
                   'isSuccess': true
                 });
-                _context.next = 12;
+                this.props.history.push("/");
+                _context.next = 13;
                 break;
 
-              case 9:
-                _context.prev = 9;
+              case 10:
+                _context.prev = 10;
                 _context.t0 = _context["catch"](1);
                 this.setState({
                   'isError': true,
@@ -71879,12 +72040,12 @@ var teamAdd = /*#__PURE__*/function (_Component) {
                   'isSuccess': false
                 });
 
-              case 12:
+              case 13:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, this, [[1, 9]]);
+        }, _callee, this, [[1, 10]]);
       }));
 
       function onSubmiHandler(_x) {
@@ -71906,7 +72067,7 @@ var teamAdd = /*#__PURE__*/function (_Component) {
                 formdata.append('logo', stateData.logo);
                 formdata.append('team_name', stateData.teamName);
                 formdata.append('state', stateData.state);
-                return _context2.abrupt("return", _api__WEBPACK_IMPORTED_MODULE_2__["default"].post('teams', formdata, {
+                return _context2.abrupt("return", _api__WEBPACK_IMPORTED_MODULE_3__["default"].post('teams', formdata, {
                   headers: {
                     'content-type': 'multipart/form-data',
                     'X-CSRF-TOKEN': csrf_token
@@ -72200,11 +72361,12 @@ var teamEdit = /*#__PURE__*/function (_Component) {
                   'isError': false,
                   'isSuccess': true
                 });
-                _context3.next = 12;
+                this.props.history.push("/");
+                _context3.next = 13;
                 break;
 
-              case 9:
-                _context3.prev = 9;
+              case 10:
+                _context3.prev = 10;
                 _context3.t0 = _context3["catch"](1);
                 this.setState({
                   'isError': true,
@@ -72212,12 +72374,12 @@ var teamEdit = /*#__PURE__*/function (_Component) {
                   'isSuccess': false
                 });
 
-              case 12:
+              case 13:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3, this, [[1, 9]]);
+        }, _callee3, this, [[1, 10]]);
       }));
 
       function onSubmiHandler(_x) {
@@ -72406,10 +72568,9 @@ var teamsList = /*#__PURE__*/function (_Component) {
               case 4:
                 this.setState({
                   'teamsList': updatedTeams
-                });
-                console.log(this.state.teamsList);
+                }); //console.log(this.state.teamsList);
 
-              case 6:
+              case 5:
               case "end":
                 return _context.stop();
             }
@@ -72531,7 +72692,9 @@ var teamsList = /*#__PURE__*/function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
           key: i
         }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, i + 1), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-          src: '/teams/' + el.logo
+          height: "100",
+          width: "100",
+          src: 'http://127.0.0.1:8000/storage/teams/' + el.logo
         })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: '/players/' + el.id
         }, el.name)), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, el.state), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -72544,15 +72707,15 @@ var teamsList = /*#__PURE__*/function (_Component) {
       });
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
         className: "table table-bordered m-top-100 m-btm-100"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Sr."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Logo"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Name"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Club"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Sr."), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Logo"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Name"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", null, "Club"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
         colspan: "2"
-      }, "Action")), teamRow, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
+      }, "Action"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, teamRow, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", {
         colSpan: "3"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/team/add"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
         className: "btn btn-primary"
-      }, "Add Team"))))));
+      }, "Add Team")))))));
     }
   }]);
 

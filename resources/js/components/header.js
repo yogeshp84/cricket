@@ -11,10 +11,7 @@ const primaryHeader = ()=>{
             <Link className="nav-link" to="/">Home</Link>
         </li>
         <li className="nav-item">
-            <Link className="nav-link" to="/players/10">Players</Link>
-        </li>
-        <li className="nav-item">
-            <Link className="nav-link" to="/points-table">Points Table</Link>
+            <Link className="nav-link" to="/matches">Points Table</Link>
         </li>
       </ul>
     

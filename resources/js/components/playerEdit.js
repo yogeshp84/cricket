@@ -80,6 +80,7 @@ import API from './api';
                 'isSuccess':true
                 
           });
+          this.props.history.push("/players/"+this.state.team_id);
         }catch (error) {
             this.setState({
                 'isError':true,

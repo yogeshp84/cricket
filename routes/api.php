@@ -28,6 +28,8 @@ use Illuminate\Support\Facades\Route;
     Route::post('/players/update/{id}', 'PlayersController@update');
     Route::delete('/player/{id}', 'PlayersController@destroy');
     
-    Route::get('matches', 'MatchesController@show');
+    Route::get('/matches', 'TeamsController@matches');
     
     Route::view('{path?}', 'index');
+    Route::get('images/{filename}', 'TeamsController@displayImage');
+    Route::get('player/{filename}', 'TeamsController@displayImage');

@@ -61,6 +61,7 @@ import API from './api';
                 'isSuccess':true
                 
           });
+          this.props.history.push("/");
         }catch (error) {
             this.setState({
                 'isError':true,

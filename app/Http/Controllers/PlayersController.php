@@ -91,15 +91,23 @@ class PlayersController extends Controller
       $this->_validateForm($request,false);
       
       $player =      Player::find($id);
-      //dd($team);
-      //$player->name = $request->post('team_name');
-      //$player->state = $request->post('state');
+      
+      $player->firstName = $request->post('firstName');
+      $player->lastName = $request->post('lastName');
+      $player->team_id = $request->post('team_id');
+      $player->country = $request->post('country');
+      $player->jerseyNumber = $request->post('jerseyNumber');
+      $player->matchesPlayed = $request->post('matchesPlayed');
+      $player->totalsRunScored = $request->post('totalsRunScored');
+      $player->highestScore = $request->post('highestScore');
+      $player->fifties = $request->post('fifties');
+      $player->hundreds = $request->post('hundreds');
       //upload file
       if($request->file('image')){
       $player->image = $this->_uploadFile($request);
       }
         //store teams
-       $player->update($request->all());
+       $player->update();
 
       return response()->json('success');
     }
@@ -115,6 +123,7 @@ class PlayersController extends Controller
         $team = Player::find($id);
 
         $team->delete();
+        //unlink image as well later
     }
     
     private function _validateForm(Request $request,$fileValid=TRUE){

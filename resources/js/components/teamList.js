@@ -19,7 +19,7 @@ class teamsList  extends Component{
         this.setState({
             'teamsList':updatedTeams
         });
-        console.log(this.state.teamsList);
+        //console.log(this.state.teamsList);
         
     }
     
@@ -55,7 +55,7 @@ class teamsList  extends Component{
     let teamRow = this.state.teamsList.map((el, i) => (
             <tr key={i}>
                  <td>{i+1}</td>
-                 <td><img src={'/teams/'+el.logo}/></td>
+                 <td><img height="100" width="100" src={'http://127.0.0.1:8000/storage/teams/'+el.logo}/></td>
                  <td>
                    <Link to={'/players/'+el.id}>{el.name}</Link>
                  </td>
@@ -71,6 +71,7 @@ class teamsList  extends Component{
     return(
           <React.Fragment>
           <table className="table table-bordered m-top-100 m-btm-100">
+          <thead>
             <tr>
               <th>Sr.</th>
               <th>Logo</th>
@@ -78,12 +79,15 @@ class teamsList  extends Component{
               <th>Club</th>
               <th colspan='2'>Action</th>
             </tr>
+            </thead>
+             <tbody>
              {teamRow}
            
             <tr>
               <td colSpan="3"></td>
               <td><Link to="/team/add"><button className="btn btn-primary">Add Team</button></Link></td>
             </tr>
+            </tbody>
           </table>
           </React.Fragment>
     

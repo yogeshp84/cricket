@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Team;
+use App\Matches;
 use App\Http\Resources\MyCollection;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 class TeamsController extends Controller
 {
     
@@ -19,6 +22,23 @@ class TeamsController extends Controller
     {
         $teams =   Team::All();
         return response()->json($teams);
+    }
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function matches()
+    {
+            $matches['data'] = DB::table('teams as t1')
+            ->join('matches', 't1.id', '=', 'matches.team1')
+            ->join('teams', 'teams.id', '=', 'matches.team2')
+            ->join('teams as tw', 'tw.id', '=', 'matches.winner')
+            ->select(DB::raw('DATE_FORMAT(matches.matchDate, "%b %d, %Y") as matchDate'),'t1.name as teamFirst', 'teams.name as teamTwo','tw.name as teamWinner','matches.points as matchPoints')
+            ->get();
+            //dd($matches);
+            return response()->json($matches);
     }
 
     /**
@@ -69,19 +89,21 @@ class TeamsController extends Controller
      */
     public function update(Request $request, $id)
     {
-      //validate form data
-      $this->_validateForm($request,false);
+        //dd($request->file('logo'));
+      
       
       $team = Team::find($id);
-      //dd($team);
+      //validate form data
+      $this->_validateForm($request,false);
       $team->name = $request->post('team_name');
       $team->state = $request->post('state');
       //upload file
-      if($request->file('logo')){
-      $team->logo = $this->_uploadFile($request);
+      
+      if($request->file('logo')!=''){
+        $team->logo = $this->_uploadFile($request);
       }
         //store teams
-       $team->update($request->all());
+       $team->update();
 
       return response()->json('success');
     }
@@ -99,6 +121,7 @@ class TeamsController extends Controller
       $team->delete();
 
       return response()->json('success');
+      //unlink image as well later
     }
     
     private function _validateForm(Request $request,$fileValid=TRUE){
@@ -125,4 +148,5 @@ class TeamsController extends Controller
         );
         return $filename;
     }
+    
 }

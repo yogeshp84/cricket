@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2020 at 06:57 AM
+-- Generation Time: Mar 10, 2020 at 11:45 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.28
 
@@ -53,6 +53,14 @@ CREATE TABLE `matches` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `matches`
+--
+
+INSERT INTO `matches` (`id`, `team1`, `team2`, `winner`, `points`, `matchDate`, `created_at`, `updated_at`) VALUES
+(3, 9, 10, 9, 5, '2020-03-01 16:11:39', '2020-03-02 10:41:39', '2020-03-02 10:41:39'),
+(4, 10, 9, 10, 5, '2020-03-04 16:11:39', '2020-03-05 10:41:39', '2020-03-05 10:41:39');
 
 -- --------------------------------------------------------
 
@@ -105,7 +113,10 @@ CREATE TABLE `players` (
 --
 
 INSERT INTO `players` (`id`, `team_id`, `firstName`, `lastName`, `image`, `country`, `jerseyNumber`, `matchesPlayed`, `totalsRunScored`, `highestScore`, `fifties`, `hundreds`, `created_at`, `updated_at`) VALUES
-(2, 2, 'vinayak', 'Kumar', '1583803576go-ddd.png', 'India', 10, 10, 30, 8, 8, 9, '2020-03-09 19:56:16', '2020-03-09 19:56:16');
+(8, 9, 'Player', '1', '1583836435logo.jfif', 'India', 10, 20, NULL, 49, 2, 60, '2020-03-10 05:03:55', '2020-03-10 05:07:31'),
+(9, 10, 'Player', '2', '1583836710logo.jfif', 'Pakistan', 11, 10, 200, 10, 0, 0, '2020-03-10 05:08:30', '2020-03-10 05:08:30'),
+(10, 10, 'Player', '3', '1583836793logo.jfif', 'Australia', 12, 50, 2000, 100, 3, 1, '2020-03-10 05:09:53', '2020-03-10 05:09:53'),
+(11, 9, 'Player', '5', '1583836865logo.jfif', 'Australia', 13, 70, 5000, 150, 5, 4, '2020-03-10 05:11:06', '2020-03-10 05:11:06');
 
 -- --------------------------------------------------------
 
@@ -127,8 +138,8 @@ CREATE TABLE `teams` (
 --
 
 INSERT INTO `teams` (`id`, `name`, `logo`, `state`, `created_at`, `updated_at`) VALUES
-(1, 'TeamA111', NULL, 'Haryana', '2020-03-09 19:53:16', '2020-03-09 20:25:41'),
-(2, 'TeamB', '1583803413go-ddd.png', 'Rajasthan', '2020-03-09 19:53:33', '2020-03-09 19:53:33');
+(9, 'Team2', '1583836278logo.jfif', 'Rajasthan', '2020-03-10 04:47:40', '2020-03-10 05:01:18'),
+(10, 'Team3', '1583835581logo.jfif', 'Uttar Pardesh', '2020-03-10 04:49:41', '2020-03-10 04:49:41');
 
 -- --------------------------------------------------------
 
@@ -202,7 +213,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `matches`
 --
 ALTER TABLE `matches`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -214,13 +225,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `players`
 --
 ALTER TABLE `players`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `teams`
 --
 ALTER TABLE `teams`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
