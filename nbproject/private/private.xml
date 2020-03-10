@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/xampp/htdocs/cricket/routes/web.php</file>
+            <file>file:/D:/xampp/htdocs/cricket/resources/js/components/App.js</file>
+            <file>file:/D:/xampp/htdocs/cricket/resources/js/index.js</file>
+            <file>file:/D:/xampp/htdocs/cricket/resources/views/index.blade.php</file>
+            <file>file:/D:/xampp/htdocs/cricket/.env.example</file>
+            <file>file:/D:/xampp/htdocs/cricket/app/Http/Resources/MyCollection.php</file>
+            <file>file:/D:/xampp/htdocs/cricket/app/Matche.php</file>
+            <file>file:/D:/xampp/htdocs/cricket/resources/js/components/api.js</file>
+            <file>file:/D:/xampp/htdocs/cricket/app/Player.php</file>
+            <file>file:/D:/xampp/htdocs/cricket/resources/js/components/teamAdd.js</file>
+            <file>file:/D:/xampp/htdocs/cricket/resources/js/components/teamEdit.js</file>
+            <file>file:/D:/xampp/htdocs/cricket/config/database.php</file>
+            <file>file:/D:/xampp/htdocs/cricket/app/Http/Controllers/TeamsController.php</file>
+            <file>file:/D:/xampp/htdocs/cricket/app/Team.php</file>
+            <file>file:/D:/xampp/htdocs/cricket/resources/js/components/teamList.js</file>
+            <file>file:/D:/xampp/htdocs/cricket/.env</file>
+            <file>file:/D:/xampp/htdocs/cricket/routes/api.php</file>
+        </group>
+    </open-files>
+</project-private>
